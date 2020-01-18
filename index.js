@@ -85,12 +85,12 @@ getName(person);
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
 function makeSmartPerson(name) {
-  const object = {
+  return {
     name: name,
     sum: (num1, num2) => num1 + num2,
-    speak: () => ' Hello, my name is' + object.name,
+    speak: () => ' Hello, my name is ' + name,
   }
-  return object
+  
 }
 makeSmartPerson();
 
@@ -151,9 +151,9 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
 
-  for (let i = 0; i < inventory.length; i++) {
+  
     return `this is a ${inventory[index].car_make} ${inventory[index].car_model}`
-  }
+  
 }
 getCarInfoByIndex(0, 0);
 /**
@@ -169,7 +169,7 @@ getCarInfoByIndex(0, 0);
 */
  function getLastCarInfo(inventory) {
 
-  let i = 0;
+  
   const lastCar = inventory[inventory.length - 1]
   return `This is a ${lastCar.car_make} ${lastCar.car_model}`
 }
@@ -189,8 +189,9 @@ getCarInfoByIndex(0, 0);
 */
 function getCarInfoById (inventory, id){
 
-  let i = 0;
-  for (i = 0; i < inventory.length; i++) {
+ 
+  for (let i = 0; i < inventory.length; i++) { 
+    if (inventory[i].id ===id)
     return `this is a ${inventory[i].car_make} ${inventory[i].car_model}`
   }
 }
@@ -266,7 +267,7 @@ function getGermanCars(inventory) {
       cars.car_make === "Mercedes-Benz" ||
       cars.car_make === "Volkswagen" ||
       cars.car_make === "BMW") {
-      carsWanted.push(cars)
+        carsWanted.push(cars)
     }
   }
   return carsWanted;
